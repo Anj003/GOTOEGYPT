@@ -182,7 +182,7 @@ z-index: -1;
 /* end of header section  */
 /* hero-section */
 #hero{
-background-image: url("/images/c11.jpg"); 
+background-image: url("../images/c11.jpg"); 
 background-position:top center;
 position: relative;
 background-size: cover;
@@ -327,18 +327,42 @@ box-sizing: border-box;
 }
 #services .row p{
     float: left;
-    width: 50%;
-  height: 50%;
+    width: 100%;
+  height: 100%;
+}
+#services .service-top{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 #services .service-top .row p {
     color: white;
     font-size: 1.4rem;
-    margin-top: 5px;
+    /* margin-top: 18px;*/
     line-height: 2.5rem;
     font-weight: 300;
     letter-spacing: .05rem;
     text-align: start;
-    padding: 36px 145px 5px 191px;
+    /* padding: 36px 145px 5px 191px; */
+}
+#services .col-6{
+  flex-basis: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  padding: 30px;
+  margin: 1px -1%;
+}
+#services .col-6::after{
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width:100%;
 }
 #services .service-bottom{
   display: flex;
@@ -346,7 +370,7 @@ box-sizing: border-box;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 30px;
   height: 80%;
 } 
  #services .service-item{
@@ -523,10 +547,30 @@ padding-bottom: 30px;
   }
 }
 /* end keyframes */
-
-
+/* Media Query for tablet  */
+@media only screen and (min-width: 1000px){
+  /* sevice section  */
+   #services .service-top .row p{ 
+    flex-basis : 45%;
+    margin: 1.5%;
+    box-sizing: border-box;
+    flex-direction: column;
+  } 
+  #services .service-top{
+    box-sizing: border-box;
+  }
+  #services .service-top .row {
+  display: flex;
+  }
+  #services .service-top .row::after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+/* end service section*/
 /* Media Query for desktop  */
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1000px){
   #header .hamburger{
     display: none;
   }
@@ -550,4 +594,5 @@ padding-bottom: 30px;
     display: none;
   }
 }
-/* end media query  */
+
+/* end of query  */
